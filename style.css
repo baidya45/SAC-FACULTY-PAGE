@@ -4,6 +4,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   font-family: "Arimo", sans-serif;
   background: url("pexels-karolina-grabowska-4590785.jpg");
@@ -61,30 +62,59 @@ main {
 
 .cards {
   width: 30%;
-  height: 45vh;
+  height: 48vh;
+  margin-bottom: 3em;
+  border-radius: 2em;
+  box-shadow: 0.4em 0.4em 1.2em rgb(0, 0, 0, 0.5);
 }
 
 .image {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 1.4em;
 }
 
 .image img {
   width: 45%;
 }
+.over {
+  /* display: none; */
+  position: absolute;
+  /* margin: auto auto; */
+  top: 0;
+  left: auto;
+  border-radius: 2em;
+  width: 48%;
+  height: 100%;
+  background: rgb(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+}
+.over input {
+  width: 50px;
+  height: 50px;
+}
 
 .detail {
-  height: 12em;
+  height: 14.9em;
   border: 2.6px solid transparent;
-  margin-top: 1em;
+  margin-top: 1.4em;
   border-radius: 2em;
   padding: auto;
-  box-shadow: 0.4em 0.4em 1.2em rgb(0, 0, 0, 0.5);
+  /* box-shadow: 0.4em 0.4em 1.2em rgb(0, 0, 0, 0.5); */
+  background-image: linear-gradient(
+    to right,
+    rgb(143, 131, 131),
+    rgb(206, 206, 196)
+  );
+  transition: all 0.42s;
 }
 
 .detail:hover {
-  transition: 0.4s;
   cursor: pointer;
   border: 0.3em solid rgb(12, 114, 173);
 }
@@ -116,12 +146,16 @@ main {
 
 @media (max-width: 1240px) {
   .detail {
+    margin-top: 12em;
     height: 12.8em;
   }
 }
 @media (max-width: 950px) {
   body {
     font-size: 9px;
+  }
+  .detail {
+    margin-top: 20em;
   }
 }
 @media (max-width: 780px) {
@@ -135,7 +169,11 @@ main {
     width: 45%;
   }
   .image img {
-    width: 48%;
+    margin-top: 0em;
+    width: 46%;
+  }
+  .detail {
+    margin-top: 18em;
   }
 }
 
@@ -144,20 +182,31 @@ main {
     height: 45vh;
   }
   .cards {
-    width: 75%;
+    width: 70%;
   }
   .image img {
+    margin-top: 2em;
     width: 46%;
+  }
+  .detail {
+    margin-top: 16em;
+    border-radius: 3em;
   }
 }
 @media (max-width: 480px) {
   body {
     font-size: 7.2px;
   }
-  .ptitle {
-    text-align: center;
+  .image img {
+    width: 50%;
   }
-  ul {
+  .over:hover {
+    opacity: 0.8;
+  }
+  .detail {
+    margin-top: 20em;
+  }
+  .des input {
     display: none;
   }
 }
@@ -167,10 +216,17 @@ main {
   }
   .cards {
     width: 80%;
-    height: 50vh;
+    height: 40vh;
+    margin-bottom: 3em;
+    border-radius: 3em;
   }
   .image img {
-    width: 50%;
+    margin-top: 0;
+    width: 48%;
+  }
+
+  .detail {
+    margin-top: 16em;
   }
 }
 @media (max-width: 380px) {
@@ -178,9 +234,11 @@ main {
     height: 37vh;
   }
   .cards {
-    width: 100%;
-    height: 44vh;
+    width: 90%;
+    margin-bottom: 9em;
   }
   .details {
+    margin-top: 1em;
+    border-radius: 0em;
   }
 }
